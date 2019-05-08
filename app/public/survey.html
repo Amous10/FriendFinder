@@ -1,0 +1,61 @@
+<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS LOADED FROM OUR SERVER -->
+<script type="text/javascript">
+
+    // In this code, jQuery is used to "download" the data from our server
+    // We then dynamically display this content in our table. This is very similar to the group projects you just completed.
+  
+    function runFriendQuery() {
+      // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
+      $.ajax({ url: "/api/survey", method: "GET" })
+        .then(function(data) {
+  
+          // Here we then log the tableData to console, where it will show up as an object.
+          console.log(surveyData);
+          console.log("------------------------------------");
+  
+          // Loop through and display each of the customers
+          for (var i = 0; i < data.length; i++) {
+  
+            // Get a reference to the tableList element and populate it with tables
+            var friendList = $("#surveysList");
+  
+            // Then display the fields in the HTML (Section Name, Date, URL)
+            var listItem = $("<li class='list-group-item mt-4'>");
+  
+            listItem.append(
+              $("<h2>").text("Friend" + (i + 1)),
+              $("<hr>"),
+              $("<h2>").text("ID: " + friendData[i].name),
+              $("<h2>").text("Name: " + friendData[i].photo),
+            );
+  
+            friendList.append(listItem);
+          }
+        });
+    }
+  
+   
+  
+    // This function resets all of the data in our tables. This is intended to let you restart a demo.
+    function clearTable() {
+      alert("Clearing...");
+  
+      // Clear the tables on the server and then empty the elements on the client
+      $.ajax({ url: "/api/clear", method: "POST" }).then(function() {
+        $("#surveyList").empty();
+      });
+    }
+  
+    $("#clear").on("click", clearTable);
+  
+  
+    // Run Queries!
+    // ==========================================
+    runSurveyQuery();
+
+  
+  
+  </script>
+  
+  </html>
+  
