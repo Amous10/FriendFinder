@@ -1,61 +1,258 @@
-<!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS LOADED FROM OUR SERVER -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>FriendFinder</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+            crossorigin="anonymous">
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Survey Questions</h2>
+        <hr>
+        <h3>
+            <strong>About You</strong>
+        </h3>
+        <!-- Below are the name and phote fields to add to name and photo and questions
+        below and each choice has a value -->
+        <h4>
+          Name (Required)
+        </h4>
+        <input type="text" name="" id="name" class="form-control" required>
+        <h4>Link to Photo Image (Required)</h4>
+        <input type="text" name="" id="photo" class="form-control" required>
+        <hr>
+        <h3><strong>Question 1</strong></h3>
+        <h4> I would confront a man with a loaded gun.</h4>
+        <select data-placeholder class="selection" id="q1">
+        <option value="">Make a Selection</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+        <h3><strong>Question 2</strong></h3>
+        <h4>Tights are fun to wear.</h4>
+        <select data-placeholder class="selection" id="q2">
+        <option value="">Make a Selection</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+        <h3><strong>Question 3</strong></h3>
+        <h4>I do not mind others knowing my true identity.</h4>
+        <select data-placeholder class="selection" id="q3">
+        <option value="">Make a Selection</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+        <h3><strong>Question 4</strong></h3>
+        <h4>Capes are frick'n awesome!</h4>
+        <select data-placeholder class="selection" id="q4">
+        <option value="">Make a Selection</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+        <h3><strong>Question 5</strong></h3>
+        <h4>I work better with others.</h4>
+        <select data-placeholder class="selection" id="q5">
+        <option value="">Make a Selection</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+        <h3><strong>Question 6</strong></h3>
+        <h4>I am a problem solver.</h4>
+        <select data-placeholder class="selection" id="q6">
+        <option value="">Make a Selection</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+        <h3><strong>Question 7</strong></h3>
+        <h4>Gadgets are very useful to me.</h4>
+        <select data-placeholder class="selection" id="q7">
+        <option value="">Make a Selection</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+        <h3><strong>Question 8</strong></h3>
+        <h4>I consider myself a leader.</h4>
+        <select data-placeholder class="selection" id="q8">
+        <option value="">Make a Selection</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+        <h3><strong>Question 9</strong></h3>
+        <h4>I can defy gravity.</h4>
+        <select data-placeholder class="selection" id="q9">
+        <option value="">Make a Selection</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+        <h3><strong>Question 10</strong></h3>
+        <h4>I am originally from Earth.</h4>
+        <select data-placeholder class="selection" id="q10">
+        <option value="">Make a Selection</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+        <div class="container">
+            <!-- Trigger the modal with a button -->
+            <br>
+            <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal" id="surveyButton">Submit</button>
+            <br>
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Friend Match</h4>
+                        </div>
+                        <div class="modal-body">
+                            <h2>Your Friend match is:</h2>
+                            <br>
+                           <h2 id="matchName"></h2>
+                            <br>
+                            <img id="matchImg" src="" alt="#" style="width:50%; height:auto;">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>    
+            <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/Amous10/FriendFinder">Github Repo</a></p>
+        </div>
+
+
+        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
 <script type="text/javascript">
 
-    // In this code, jQuery is used to "download" the data from our server
-    // We then dynamically display this content in our table. This is very similar to the group projects you just completed.
-  
-    function runFriendQuery() {
-      // The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
-      $.ajax({ url: "/api/survey", method: "GET" })
-        .then(function(data) {
-  
-          // Here we then log the tableData to console, where it will show up as an object.
-          console.log(surveyData);
-          console.log("------------------------------------");
-  
-          // Loop through and display each of the customers
-          for (var i = 0; i < data.length; i++) {
-  
-            // Get a reference to the tableList element and populate it with tables
-            var friendList = $("#surveysList");
-  
-            // Then display the fields in the HTML (Section Name, Date, URL)
-            var listItem = $("<li class='list-group-item mt-4'>");
-  
-            listItem.append(
-              $("<h2>").text("Friend" + (i + 1)),
-              $("<hr>"),
-              $("<h2>").text("ID: " + friendData[i].name),
-              $("<h2>").text("Name: " + friendData[i].photo),
-            );
-  
-            friendList.append(listItem);
-          }
-        });
-    }
-  
-   
-  
-    // This function resets all of the data in our tables. This is intended to let you restart a demo.
-    function clearTable() {
-      alert("Clearing...");
-  
-      // Clear the tables on the server and then empty the elements on the client
-      $.ajax({ url: "/api/clear", method: "POST" }).then(function() {
-        $("#surveyList").empty();
-      });
-    }
-  
-    $("#clear").on("click", clearTable);
-  
-  
-    // Run Queries!
-    // ==========================================
-    runSurveyQuery();
 
-  
-  
-  </script>
-  
-  </html>
-  
+    // var userData;
+
+     // Here we grab the form elements
+    // on the click of the submit button it will store answers in a var userData
+    $('#surveyButton').on('click', function (event) {
+        event.preventDefault();
+        var userData = {
+            name: $('#name').val().trim(),
+            photo: $('#photo').val().trim(),
+            answers: [$("#q1").val(), $("#q2").val(),
+                $("#q3").val(), $("#q4").val(), $("#q5").val(),
+                $("#q6").val(), $("#q7").val(), $("#q8").val(),
+                $("#q9").val(), $("#q10").val()
+            ]
+        }
+        console.log(userData.answers)
+// this funciton will make an ajax call get friends that are stored in the data file
+    function getAvailableFriends() {
+        var currentURL = window.location.origin;
+        $.ajax({
+                url: currentURL + '/api/friends'
+            })
+            .done(function (availableFriends) {
+                console.log(availableFriends);
+                var answerValue = 50;
+                var match;
+                var matchDifference = 20;
+                var friendsIndex = 0;
+                //These function to compare answers of user to the stored friends
+                function searchFriends() {
+                    for (j = 0; j < availableFriends.length; j++) {
+                        friendsIndex = j;
+                        personality();
+                    }
+                    console.log("Your perfect Friend match is..... " + match);
+                }
+                // peronality function will compare answers and return who is the closest match
+                function personality() {
+                    answerValue = 0;
+                    for (var i = 0; i < 10; i++) {
+                        var numArray1 = parseInt(availableFriends[friendsIndex].answers[i]);
+                        var numArray2 = parseInt(userData.answers[i]);
+                        var questionDifference = Math.abs(numArray1 - numArray2);
+                        answerValue += questionDifference;
+                    }
+                    if (answerValue < matchDifference) {
+                        matchDifference = answerValue;
+                        match = availableFriends[friendsIndex].name;
+                        var matchPhoto = availableFriends[friendsIndex].photo;
+                        console.log(answerValue);
+                        console.log(availableFriends[friendsIndex].name);
+                        console.log(matchDifference)
+                        $("#matchImg").attr("src", matchPhoto);
+                        $("#matchName").html(match)
+                        addUserData();
+                    }
+                }
+                searchFriends();
+            })
+            
+    }
+    getAvailableFriends();
+});
+
+// This line is the magic. It"s very similar to the standard ajax function we used.
+    // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
+    // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
+    // depending on if a tables is available or not.
+// this will add the user to the friends array and then clear the form
+function addUserData() {
+        $.post("/api/friends", userData,
+            function (data) {
+                // Clear the form when submitting
+                $("#name").val("");
+                $("#photo").val("");
+                $("#q1").val("");
+                $("#q2").val("");
+                $("#q3").val("");
+                $("#q4").val("");
+                $("#q5").val("");
+                $("#q6").val("");
+                $("#q7").val("");
+                $("#q8").val("");
+                $("#q9").val("");
+                $("#q10").val("");
+            });
+}
+</script>
+
+</html>

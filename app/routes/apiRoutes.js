@@ -1,6 +1,6 @@
 // LOAD DATA
 // We are linking our routes to a series of "data" sources.
-var friendData = require("../data/friendData");
+var friendData = require("../data/friends");
 
 
 // ROUTING
@@ -35,7 +35,7 @@ module.exports = function(app) {
     // else {
     //   waitListData.push(req.body);
     //   res.json(false);
-    // }
+    // } 
   });
 
   // ---------------------------------------------------------------------------
