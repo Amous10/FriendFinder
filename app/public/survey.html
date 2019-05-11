@@ -170,6 +170,8 @@
 
      // Here we grab the form elements
     // on the click of the submit button it will store answers in a var userData
+    var globalUserData;
+
     $('#surveyButton').on('click', function (event) {
         event.preventDefault();
         var userData = {
@@ -181,7 +183,16 @@
                 $("#q9").val(), $("#q10").val()
             ]
         }
-        console.log(userData.answers)
+        globalUserData = {
+            name: $('#name').val().trim(),
+            photo: $('#photo').val().trim(),
+            answers: [$("#q1").val(), $("#q2").val(),
+                $("#q3").val(), $("#q4").val(), $("#q5").val(),
+                $("#q6").val(), $("#q7").val(), $("#q8").val(),
+                $("#q9").val(), $("#q10").val()
+            ]
+        };
+        console.log('**User Data:', userData.answers)
 // this funciton will make an ajax call get friends that are stored in the data file
     function getAvailableFriends() {
         var currentURL = window.location.origin;
@@ -189,7 +200,7 @@
                 url: currentURL + '/api/friends'
             })
             .done(function (availableFriends) {
-                console.log(availableFriends);
+                console.log('Available Friends:', availableFriends);
                 var answerValue = 50;
                 var match;
                 var matchDifference = 20;
@@ -202,12 +213,21 @@
                     }
                     console.log("Your perfect Friend match is..... " + match);
                 }
-                // peronality function will compare answers and return who is the closest match
+
+                function sumArr(arr) {
+                    var sum = 0;
+                    for (var i =0; i < arr.length; i++) {
+                        sum += i;
+                    }
+                    return sum;
+                }
+
+                // personality function will compare answers and return who is the closest match
                 function personality() {
                     answerValue = 0;
                     for (var i = 0; i < 10; i++) {
-                        var numArray1 = parseInt(availableFriends[friendsIndex].answers[i]);
-                        var numArray2 = parseInt(userData.answers[i]);
+                        var numArray1 = sumArr(availableFriends[friendsIndex].scores[i]);
+                        var numArray2 = sumArr(userData.answers[i]);
                         var questionDifference = Math.abs(numArray1 - numArray2);
                         answerValue += questionDifference;
                     }
@@ -236,7 +256,7 @@
     // depending on if a tables is available or not.
 // this will add the user to the friends array and then clear the form
 function addUserData() {
-        $.post("/api/friends", userData,
+        $.post("/api/friends", globalUserData,
             function (data) {
                 // Clear the form when submitting
                 $("#name").val("");
