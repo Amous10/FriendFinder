@@ -4,6 +4,10 @@
 
 Users fill in the survey form. The app will analyze the data and then display the name and photo of the best overall matched friend.
 
+### Deployed by Heroku here
+
+[Friend Finder](https://pacific-crag-71518.herokuapp.com/)
+
 #### Technology Used
 
 * Full-stack site
