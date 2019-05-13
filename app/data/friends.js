@@ -2,16 +2,16 @@ var friends = [{
         "name": "Jen",
         "photo": "https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?cs=srgb&dl=beautiful-brunette-cute-774909.jpg&fm=jpg",
         "scores": [
-            5,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
             1,
             4,
-            4,
-            5,
-            5,
-            2,
-            5,
-            4,
-            5
+            1
         ]
     },
     {
